@@ -26,14 +26,13 @@ node(POD_LABEL) {
         }
       stage('testing'){
           try {
-              sh '''
-              test $(curl calculator-service:8080/div?a=6\\&b=2) -eq 3 && echo 'pass' || 'fail'
-              test $(curl calculator-service:8080/div?a=6\\&b=0) -eq 0 && echo 'pass' || 'fail'
-              '''
-              }
-          } catch (Exception E) { 
-            echo 'Failure detected' 
-            } 
+                sh '''
+                test $(curl calculator-service:8080/div?a=6\\&b=2) -eq 3 && echo 'pass' || 'fail'
+                test $(curl calculator-service:8080/div?a=6\\&b=0) -eq 0 && echo 'pass' || 'fail'
+                '''
+              } catch (Exception E) { 
+                  echo 'Failure detected' 
+          } 
       } 
     }
   }
