@@ -10,7 +10,7 @@ podTemplate(yaml: '''
        args:
        - 99d
     restartPolicy: Never
-''')
+'''){
 node(POD_LABEL) {
     stage('Kubernetes on gradle container') {
     git 'https://github.com/slykmh/Continuous-Delivery-with-Docker-and-Jenkins-Second-Edition.git'
