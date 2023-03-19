@@ -2,15 +2,15 @@ podTemplate(yaml: '''
     apiVersion: v1
     kind: Pod
     spec:
-      containers:
-      - name: gradle
-        image: gradle:jdk8
-        command:
-        - sleep
-       args:
-       - 99d
-    restartPolicy: Never
-'''){
+        containers:
+        - name: gradle 
+          image: gradle:jdk8 
+          command:
+          - sleep
+          args:
+          - 99d
+          restartPolicy: Never
+    '''){
 node(POD_LABEL) {
     stage('Kubernetes on gradle container') {
     git 'https://github.com/slykmh/Continuous-Delivery-with-Docker-and-Jenkins-Second-Edition.git'
