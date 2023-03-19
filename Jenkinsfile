@@ -26,7 +26,7 @@ node(POD_LABEL) {
         }
       stage('testing'){
         sh '''
-        test $(curl calculator-service:8080/div?a=8\\&b=2) -eq 3 && echo 'pass' || 'fail'
+        test $(curl calculator-service:8080/div?a=6\\&b=0) -eq 6 && echo 'pass' || 'fail'
         '''
         }
       } 
